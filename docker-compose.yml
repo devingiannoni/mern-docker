@@ -23,12 +23,12 @@ services:
       - ./node-backend:/usr/src/app
     depends_on:
       - mongodb
-  react-backend:
-    build: ./react-backend/
+  react-frontend:
+    build: ./react-frontend/
     ports:
       - "3000:3000"
     volumes:
-      - ./react-backend:/usr/src/app
+      - ./react-frontend:/usr/src/app
     depends_on:
       - node-backend
     
