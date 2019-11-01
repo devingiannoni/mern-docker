@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   swagger:
-    container_name: mern_swagger
+    container_name: mern-swagger
     build:
       context: './swagger/'
     volumes:
@@ -11,11 +11,12 @@ services:
     ports:
       - 8080:8080
   mongodb:
-    container_name: mern_mongodb
+    container_name: mern-mongodb
     image: mongo
     ports:
       - "27017:27017"
   node-backend:
+      container_name: mern-node-backend
     build: ./node-backend/
     ports:
       - "6200:6200"
@@ -24,6 +25,7 @@ services:
     depends_on:
       - mongodb
   react-frontend:
+      container_name: mern-react-frontend
     build: ./react-frontend/
     ports:
       - "3000:3000"
