@@ -6,7 +6,7 @@ services:
     build:
       context: './swagger/'
     volumes:
-      - ./code/swagger/openapi.yaml:/usr/share/nginx/html/openapi.yaml
+      - ./swagger/openapi.yaml:/usr/share/nginx/html/openapi.yaml
       - ./swagger/openapi.html:/usr/share/nginx/html/openapi.html
     ports:
       - 8080:8080
