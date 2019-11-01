@@ -16,7 +16,7 @@ services:
     ports:
       - "27017:27017"
   node-backend:
-      container_name: mern-node-backend
+    container_name: mern-node-backend
     build: ./node-backend/
     ports:
       - "6200:6200"
@@ -25,7 +25,7 @@ services:
     depends_on:
       - mongodb
   react-frontend:
-      container_name: mern-react-frontend
+    container_name: mern-react-frontend
     build: ./react-frontend/
     ports:
       - "3000:3000"
