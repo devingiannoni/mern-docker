@@ -6,7 +6,7 @@ services:
     build:
       context: './swagger/'
     volumes:
-      - ./swagger/openapi.yaml:/usr/share/nginx/html/openapi.yaml
+      - ./src/swagger/openapi.yaml:/usr/share/nginx/html/openapi.yaml
       - ./swagger/openapi.html:/usr/share/nginx/html/openapi.html
     ports:
       - 8080:8080
@@ -21,7 +21,7 @@ services:
     ports:
       - "6200:6200"
     volumes:
-      - ./node-backend:/usr/src/app
+      - ./src/node-backend:/usr/src/app
     depends_on:
       - mongodb
   react-frontend:
@@ -30,7 +30,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./react-frontend:/usr/src/app
+      - ./src/react-frontend:/usr/src/app
     depends_on:
       - node-backend
     
